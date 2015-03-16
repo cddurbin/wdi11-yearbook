@@ -10,16 +10,26 @@
 <body>
   <div ng-controller="StudentsController">
     <div id="wrapper">
-      <div class="column" ng-repeat="student in students" ng-mouseover="selectStudent(student)">
+      <div class="column" ng-repeat="student in students" ng-mouseover="selectStudent(student)" ng-class-odd="'odd'" ng-class-even="'even'" ng-class='{second:$index(1)}'>
         <section>
           <img src="{{ student.photo }}">
           <div class="details" ng-show="student === selectedStudent">
             <ul>
-              <li>{{ selectedStudent.name }}</li>
-              <li><a href="#">Bio</a></li>
-              <li><a href="#">Email</a></li>
+              <li><h3>{{ selectedStudent.name }}</h3></li>
+              <li><a href="#" ng-click="showMore()">More Details</a></li>
+              <li><a href="#">{{ selectedStudent.email }}</a></li>
               <li><a href="#">GitHub</a></li>
             </ul>
+            <div class="overlay" ng-class="class">
+              <div class="close" ng-click="closeModal()">
+                X
+              </div>
+              <div class="more-details">
+                <div class="more-details-content">
+                  <p>Bio: {{ selectedStudent.bio }}</p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </div>
