@@ -2,6 +2,9 @@ var app = angular.module('wdiYearbook', []);
 
 app.controller('StudentsController', function($scope){
   $scope.students = students;
+  $scope.selectStudent = function(student){
+    $scope.selectedStudent = student;
+  }
 });
 
 

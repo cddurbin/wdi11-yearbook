@@ -10,11 +10,20 @@
 <body>
   <div ng-controller="StudentsController">
     <div id="wrapper">
-      <div class="column" ng-repeat="student in students">
+      <div class="column" ng-repeat="student in students" ng-mouseover="selectStudent(student)">
         <section>
           <img src="{{ student.photo }}">
+          <div class="details" ng-show="student === selectedStudent">
+            <ul>
+              <li>{{ selectedStudent.name }}</li>
+              <li><a href="#">Bio</a></li>
+              <li><a href="#">Email</a></li>
+              <li><a href="#">GitHub</a></li>
+            </ul>
+          </div>
         </section>
       </div>
+      
     </div>
   </div>
 </body>
