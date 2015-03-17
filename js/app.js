@@ -1,6 +1,21 @@
-var app = angular.module('wdiYearbook', []);
+var app = angular.module('wdiYearbook', ['ngRoute']);
 
-app.controller('StudentsController', function($scope){
+app.config(['$routeProvider', function($routeProvider){
+  $routeProvider
+    .when('/',{
+      controller: 'StudentsController',
+      templateUrl: '/templates/list.html'
+    })
+    .when('/students/:name',{
+      controller: 'StudentsController',
+      templateUrl: '/templates/detail.html'
+    })
+    .otherwise({
+      redirectTo: '/'
+    })
+}]);
+
+app.controller('StudentsController', function($scope, $routeParams){
   $scope.students = students;
   $scope.selectStudent = function(student){
     $scope.selectedStudent = student;
@@ -15,6 +30,7 @@ app.controller('StudentsController', function($scope){
   $scope.closeModal = function() {
     $scope.class = "hide";
   }
+  console.log($routeParams)
 });
 
 
