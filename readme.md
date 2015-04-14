@@ -1,3 +1,11 @@
-index of students' photos staggered
-hover over photo to see list of additional info (links, bio, email)
-click link to see more (bio, projects) or taken to external site
+# GA Yearbook
+
+## Description
+
+This was an in-class group project to develop a yearbook for the Web Development Immersive course at General Assembly - London.  It was an exercise in AngularJS.
+
+#### Note
+
+Not currently being worked on nor in a presentable state.
+
+Here to demonstrate some experience with AngularJS.
